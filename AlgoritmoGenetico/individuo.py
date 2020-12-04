@@ -2,19 +2,18 @@ from tab import Tabuleiro
 import math
 class Individuo(object):
   def __init__(self):
-    self.tabuleiro = Tabuleiro(8)
-    self.tabuleiro.criaTabuleiro()
-    #self.tabuleiro.criaTabuleiroPerfeito()
-    self.cromossomos = []
-    self.geraCromossomo()
-    self.fitness = None
+    self.tabuleiro = Tabuleiro(8) #Guarda um tabuleiro
+    self.tabuleiro.criaTabuleiro() #Adiciona 8 rainhas em colunas diferente e linhas aleatorias
+    self.cromossomos = [] #Guarda um algoritmo
+    self.geraCromossomo() #Gera um cromossomo representante do tabuleiro, onde cada linha é armazenada em binario
+    self.fitness = None 
     self.calculaFitness()
 
   def __repr__(self):
     return(str(self.fitness))  
 
   def geraCromossomo(self):
-    for rainha in self.tabuleiro.rainhas:
+    for rainha in self.tabuleiro.rainhas: 
       linha = bin(rainha.linha)[2:]
       self.cromossomos.append(linha)
  
