@@ -24,20 +24,20 @@ for i in range(50):
   tempos.append(tempo)
 
 print('=====MINIMO DE ITERAÇÕES =======')
-print('Media',st.median(minIteracoes))
+print('Media',sum(minIteracoes) / len(minIteracoes))
 print('desvio padrão {:.4f}'.format(st.stdev(minIteracoes)))
 
 print('===== ITERACOES =====')
-print('Media',st.median(tempos))
+print('Media',sum(tempos) / len(tempos))
 print('desvio padrão {:.4f}'.format(st.stdev(tempos)))
 
-plt.plot(iteracoes,minIteracoes)
+plt.plot(iteracoes,minIteracoes) #Grafico para o númeor minimo de iterações
 plt.xlabel('Iterações')
 plt.ylabel('Número minimo de iterações do algoritmo')
 plt.title("Gráfico 1")
 plt.show()
 
-plt.plot(iteracoes,tempos)
+plt.plot(iteracoes,tempos) #Gráfico para o tempo de execução de cada iteração
 plt.xlabel('Iterações')
 plt.ylabel('Tempo do Algoritimo')
 plt.title("Gráfico 2")
