@@ -27,7 +27,7 @@ class Tabuleiro(object):
     
   def executa(self): #Faz a movimentação de cada rainha atualizando o custo total do tabuleiro
     for rainha in self.rainhas:
-      self.HillClimbing(rainha)
+      self.hillClimbing(rainha)
       self.calculaCusto()
       self.estados.append(self.custo)#Adiciona o novo custo na lista de estados
       self.maxInt += 1
@@ -50,7 +50,7 @@ class Tabuleiro(object):
           risco += 1
     Rainha.risco = risco
   
-  def HillClimbing(self,rainha):
+  def hillClimbing(self,rainha):
     while(True):
       self.iteracoes += 1
       linhaCandidata = random.randint(0,self.numRainhas-1)
